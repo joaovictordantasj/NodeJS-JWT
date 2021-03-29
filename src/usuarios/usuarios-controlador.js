@@ -9,8 +9,9 @@ module.exports = {
       const usuario = new Usuario({
         nome,
         email,
-        senha
       });
+
+      await usuario.adicionaSenha(senha);
 
       await usuario.adiciona();
 
@@ -39,5 +40,5 @@ module.exports = {
     } catch (erro) {
       res.status(500).json({ erro: erro });
     }
-  }
+  },
 };
